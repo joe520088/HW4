@@ -7,7 +7,7 @@ public class Cell {
 	private CellComponents left;
 	private CellComponents right;
 	
-}
+
 
 /**parameterized constructor for Cell, basically given in the CellTest
  * @param left
@@ -17,6 +17,54 @@ public class Cell {
  */
 public Cell(CellComponents left, CellComponents right, CellComponents up, CellComponents down) {
 
+}
+
+
+
+public CellComponents getUp() {
+	return up;
+}
+
+
+
+public void setUp(CellComponents up) {
+	this.up = up;
+}
+
+
+
+public CellComponents getDown() {
+	return down;
+}
+
+
+
+public void setDown(CellComponents down) {
+	this.down = down;
+}
+
+
+
+public CellComponents getLeft() {
+	return left;
+}
+
+
+
+public void setLeft(CellComponents left) {
+	this.left = left;
+}
+
+
+
+public CellComponents getRight() {
+	return right;
+}
+
+
+
+public void setRight(CellComponents right) {
+	this.right = right;
 }
 
 
