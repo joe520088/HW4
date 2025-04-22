@@ -71,7 +71,7 @@ public void setRight(CellComponents right) {
 
 @Override
 public String toString() {
-	return "Cell [up=" + up + ", down=" + down + ", left=" + left + ", right=" + right + "]";
+	return "Cell [left=" + getLeft() + ", right=" + getRight() + ", up=" + getUp() + ", down=" + getDown() + "]";
 }
 
 
