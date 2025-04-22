@@ -28,9 +28,13 @@ public CellComponents getUp() {
 
 
 public void setUp(CellComponents up) {
-	this.up = up;
+	if(up == null) {
+		this.up = CellComponents.WALL;
+	}		
+	else {
+		this.up = up;
+	}
 }
-
 
 
 public CellComponents getDown() {
