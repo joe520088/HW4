@@ -15,10 +15,22 @@ public class Game {
 	private Grid grid;
 	private Random random = new Random();
 	
+	/**
+	 * Constructs a game with a predefined grid
+	 * 
+	 * @param grid
+	 * 		The grid to use for the game
+	 */
 	public Game(Grid grid) {
 		this.grid = grid;
 	}
 
+	/**
+	 * Constructs a game with a randomly generated grid of a specified size
+	 * 
+	 * @param size
+	 * 		The size of the grid
+	 */
 	public Game(int size) {
 		this.grid = createRandomGrid(size);
 	}
@@ -31,6 +43,16 @@ public class Game {
 		this.grid = grid;
 	}
 	
+	/**
+	 * Processes a players movement attempt in a specified direction and updates the
+	 * players position if the movement is valid
+	 * 
+	 * @param movement
+	 * 		The direction in which the player is trying to move
+	 * @param player
+	 * 		The player making the movement
+	 * @return true if the movement was successful, false otherwise
+	 */
 	public boolean play(Movement movement, Player player) {
 		if(movement == null || player == null) {
 			return false;
@@ -87,6 +109,15 @@ public class Game {
 		return false;
 	}
 	
+	/**
+	 * Creates a randomly created grid with a specified size. 
+	 * The grid contains an exit on a random row on the left column.
+	 * 
+	 * @param size
+	 * 		The size of the grid to create
+	 * @return
+	 * 		A new Grid object with a random layout or null if size is invalid
+	 */
 	public Grid createRandomGrid(int size) {
 		if(size < 3 || size > 7) {
 			return null;
@@ -148,6 +179,12 @@ public class Game {
 		return new Grid(rows);
 	}
 
+	/**
+	 * Generates a random cell component, either a wall or aperture
+	 * 
+	 * @return
+	 * 		A randomly chosen CellComponents value
+	 */
 	private CellComponents getRandomComponent() {
 		if(random.nextBoolean()) {
 			return CellComponents.WALL;
