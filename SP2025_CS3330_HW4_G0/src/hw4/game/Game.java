@@ -148,4 +148,18 @@ public class Game {
 		return new Grid(rows);
 	}
 
+	private CellComponents getRandomComponent() {
+		if(random.nextBoolean()) {
+			return CellComponents.WALL;
+		}
+		else {
+			return CellComponents.APERTURE;
+		}
+	}
+
+	@Override
+	public String toString() {
+		return "Game [grid=" + grid + "]";
+	}
+	
 }
