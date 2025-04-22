@@ -44,9 +44,13 @@ public CellComponents getDown() {
 
 
 public void setDown(CellComponents down) {
-	this.down = down;
+	if(down == null) {
+		this.down = CellComponents.WALL;
+	}		
+	else {
+		this.down = down;
+	}
 }
-
 
 
 public CellComponents getLeft() {
@@ -56,7 +60,12 @@ public CellComponents getLeft() {
 
 
 public void setLeft(CellComponents left) {
-	this.left = left;
+	if(left == null) {
+		this.left = CellComponents.WALL;
+	}		
+	else {
+		this.left = left;
+	}
 }
 
 
