@@ -77,9 +77,13 @@ public CellComponents getRight() {
 
 
 public void setRight(CellComponents right) {
-	this.right = right;
+	if(right == null) {
+		this.right = CellComponents.WALL;
+	}		
+	else {
+		this.right = right;
+	}
 }
-
 
 
 @Override
