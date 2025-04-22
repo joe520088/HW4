@@ -32,6 +32,7 @@ class GameTest {
 		setupGame(); // initialize a grid
 		game = new Game(grid);	
 	}
+
 	@AfterAll
 	static void tearDownAfterClass() throws Exception {
 	}
