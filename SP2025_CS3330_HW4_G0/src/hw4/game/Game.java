@@ -86,5 +86,66 @@ public class Game {
 		
 		return false;
 	}
+	
+	public Grid createRandomGrid(int size) {
+		if(size < 3 || size > 7) {
+			return null;
+		}
+		
+		ArrayList<Row> rows = new ArrayList<>();
+		int exitRow = random.nextInt(size);
+		
+		for(int i = 0; i < size; i++) {
+			ArrayList<Cell> cells = new ArrayList<>();
+			
+			for(int j = 0; j < size; j++) {
+				CellComponents left;
+				CellComponents up;
+				CellComponents right;
+				CellComponents down;
+
+				if (j == 0) {
+					if (i == exitRow) {
+						left = CellComponents.EXIT;
+					} 
+					else {
+						left = CellComponents.WALL;
+					}
+				} 
+				else {
+					left = cells.get(j - 1).getRight();
+				}
+
+				if (i == 0) {
+					up = CellComponents.WALL;
+				} 
+				else {
+					up = rows.get(i - 1).getCells().get(j).getDown();
+				}
+
+				if (j < size - 1) {
+					right = getRandomComponent(); 
+				} 
+				else {
+					right = CellComponents.WALL;
+				}
+
+				if (i < size - 1) {
+					down = getRandomComponent();
+				} 
+				else {
+					down = CellComponents.WALL;
+				}
+					
+				Cell cell = new Cell(left, right, up, down);
+				cells.add(cell);
+			}
+			
+			Row row = new Row(cells);
+			rows.add(row);
+		}
+		
+		return new Grid(rows);
+	}
 
 }
