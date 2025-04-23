@@ -16,6 +16,11 @@ public class Cell {
  * @param down
  */
 public Cell(CellComponents left, CellComponents right, CellComponents up, CellComponents down) {
+	
+	this.setUp(up);
+	this.setDown(down);
+	this.setLeft(left);
+	this.setRight(right);
 
 }
 
