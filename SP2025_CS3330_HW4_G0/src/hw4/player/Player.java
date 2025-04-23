@@ -15,9 +15,9 @@ public class Player {
 	
 	
 	public Player(Row currentRow, Cell currentCell) {
-		super()
+		super();
 		this.currentRow = currentRow;
-		this.currentCell = currentCelll;
+		this.currentCell = currentCell;
 	}
 	
 	// get current row of player
